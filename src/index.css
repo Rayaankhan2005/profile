@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --bg-charcoal: #0a0a0b;
+  --apple-blue: #007aff;
+  --apple-gray: #8e8e93;
+  --apple-silver: #f5f5f7;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #86868b;
+  
+  --glass-bg: rgba(22, 22, 23, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --radius-apple: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: default;
+}
+
+body {
+  background-color: var(--bg-charcoal);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-charcoal);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+  border: 2px solid var(--bg-charcoal);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Apple-Style Glass */
+.apple-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-apple);
+}
+
+.apple-glass-interactive {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-apple);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.apple-glass-interactive:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.apple-nav {
+  background: rgba(22, 22, 23, 0.4);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Typography & Text */
+.text-apple-headline {
+  font-weight: 700;
+  letter-spacing: -0.022em;
+}
+
+.text-apple-subheadline {
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-gradient-apple {
+  background: linear-gradient(180deg, #fff 0%, #007aff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue-cyan {
+  background: linear-gradient(90deg, #007aff, #5ac8fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Interactive Elements */
+.apple-button-primary {
+  background-color: var(--apple-blue);
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.apple-button-primary:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.apple-button-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.apple-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3s ease-in-out infinite;
+}
