@@ -56,10 +56,27 @@ const ExperienceCard = ({ exp, index }) => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.23, 1, 0.32, 1] }}
             viewport={{ once: true }}
-            className="group relative pl-8 border-l border-white/5 pb-16 last:pb-0"
+            className="group relative pl-8 pb-16 last:pb-0"
         >
-            {/* Minimal Timeline Node */}
-            <div className={`absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full transition-all duration-500 z-10 ${isOpen ? 'bg-[#007aff] ring-4 ring-blue-500/20 shadow-[0_0_12px_rgba(0,122,255,0.4)]' : 'bg-[#1c1c1e] ring-2 ring-white/10 group-hover:ring-white/20'}`}>
+            {/* Animated Blue Glow Timeline */}
+            <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-white/5 via-[#007aff]/20 to-white/5 overflow-hidden">
+                <motion.div
+                    className="absolute inset-0 bg-gradient-to-b from-transparent via-[#007aff] to-transparent opacity-50"
+                    animate={{
+                        y: ["-100%", "200%"],
+                    }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: index * 0.5
+                    }}
+                />
+            </div>
+            
+            {/* Enhanced Timeline Node */}
+            <div className={`absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full transition-all duration-500 z-10 ${isOpen ? 'bg-[#007aff] ring-4 ring-blue-500/20 shadow-[0_0_20px_rgba(0,122,255,0.6)]' : 'bg-[#1c1c1e] ring-2 ring-white/10 group-hover:ring-[#007aff]/40 group-hover:shadow-[0_0_12px_rgba(0,122,255,0.3)]'}`}>
+                {isOpen && <div className="absolute inset-0 rounded-full bg-[#007aff] animate-ping opacity-75"></div>}
             </div>
 
             <div 

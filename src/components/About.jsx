@@ -33,9 +33,9 @@ const About = () => {
 
                     <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { label: "Experience", value: "3+ Years" },
+                            { label: "Technical Support", value: "2+ Years" },
                             { label: "Projects", value: "20+" },
-                            { label: "Accuracy", value: "99.9%" }
+                            { label: "Google Workspace", value: "Expert" }
                         ].map((stat, i) => (
                             <motion.div 
                                 key={stat.label}
