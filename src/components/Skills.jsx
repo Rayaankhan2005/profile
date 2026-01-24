@@ -20,19 +20,19 @@ const SkillItem = ({ skill, index }) => (
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: index * 0.05, ease: [0.23, 1, 0.32, 1] }}
         viewport={{ once: true }}
-        className="apple-glass-interactive p-8 space-y-6"
+        className="apple-glass-interactive p-8 space-y-6 bg-white/50 dark:bg-[#161617]/70"
     >
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <div className="text-2xl text-white/30 transition-colors duration-500 group-hover:text-[#007aff]">
+                <div className="text-2xl text-gray-400 dark:text-white/30 transition-colors duration-500 group-hover:text-[#007aff]">
                     {skill.icon}
                 </div>
-                <h3 className="text-lg font-bold text-white tracking-tight">{skill.name}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">{skill.name}</h3>
             </div>
-            <div className="text-sm font-bold text-[#86868b]">{skill.level}%</div>
+            <div className="text-sm font-bold text-gray-500 dark:text-[#86868b]">{skill.level}%</div>
         </div>
         
-        <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+        <div className="h-1 bg-black/5 dark:bg-white/5 rounded-full overflow-hidden">
             <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: `${skill.level}%` }}
@@ -54,13 +54,13 @@ const Skills = () => {
                     transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
                     className="text-center mb-24"
                 >
-                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[11px] font-bold uppercase tracking-widest text-[#86868b] mb-8">
+                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-[#86868b] mb-8">
                         Technical Stack
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight text-apple-headline mb-6">
+                    <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight text-apple-headline mb-6">
                         Expertise & <span className="text-gradient-blue-cyan">Capabilities</span>
                     </h2>
-                    <p className="text-[#86868b] text-lg max-w-2xl mx-auto font-medium">
+                    <p className="text-gray-500 dark:text-[#86868b] text-lg max-w-2xl mx-auto font-medium">
                         A precise technical foundation built across diverse ecosystems and engineering disciplines.
                     </p>
                 </motion.div>
@@ -76,7 +76,7 @@ const Skills = () => {
                         href="/resume.pdf"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="apple-button-secondary px-10 py-4 rounded-full font-bold text-white/90 flex items-center justify-center backdrop-blur-xl border border-white/10"
+                        className="apple-button-secondary px-10 py-4 rounded-full font-bold text-gray-900 dark:text-white/90 flex items-center justify-center backdrop-blur-xl border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5"
                     >
                         Download Full Credentials
                     </motion.a>

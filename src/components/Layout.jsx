@@ -5,7 +5,7 @@ import Background from './Background';
 
 const Layout = ({ children }) => {
     return (
-        <div className="relative min-h-screen bg-[#0a0a0b] text-white overflow-hidden selection:bg-[#007aff]/30 selection:text-white">
+        <div className="relative min-h-screen bg-gray-50 dark:bg-[#0a0a0b] text-gray-900 dark:text-white overflow-hidden selection:bg-[#007aff]/30 selection:text-white">
             <Background />
 
             <Navbar />

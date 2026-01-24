@@ -14,14 +14,14 @@ const About = () => {
                     className="max-w-4xl mx-auto apple-glass-interactive p-8 md:p-16 relative overflow-hidden"
                 >
                     <div className="text-center mb-12">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[11px] font-bold uppercase tracking-widest text-[#86868b] mb-8">
+                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-[#86868b] mb-8">
                             Professional Identity
                         </div>
-                        <h3 className="text-3xl md:text-6xl font-bold text-white mb-10 leading-tight tracking-tight text-apple-headline">
+                        <h3 className="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white mb-10 leading-tight tracking-tight text-apple-headline">
                              Driven by <span className="text-gradient-blue-cyan">Curiosity</span> & <br/>
-                             <span className="text-white/40">Precision.</span>
+                             <span className="text-gray-300 dark:text-white/40">Precision.</span>
                         </h3>
-                         <div className="text-[#86868b] text-xl space-y-8 leading-relaxed font-medium max-w-2xl mx-auto">
+                         <div className="text-gray-500 dark:text-[#86868b] text-xl space-y-8 leading-relaxed font-medium max-w-2xl mx-auto">
                             <p>
                                 I am an entry-level IT professional with experience in Python development, technical project coordination, and quality assurance. I have worked on real-world client projects and contributed to product planning, testing, and system workflows.
                             </p>
@@ -43,10 +43,10 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1, duration: 0.8, ease: "easeOut" }}
                                 viewport={{ once: true }}
-                                className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 text-center"
+                                className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-8 text-center"
                             >
-                                <h4 className="text-4xl font-bold text-white mb-2">{stat.value}</h4>
-                                <p className="text-[10px] text-[#86868b] font-bold uppercase tracking-widest">{stat.label}</p>
+                                <h4 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</h4>
+                                <p className="text-[10px] text-gray-400 dark:text-[#86868b] font-bold uppercase tracking-widest">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>

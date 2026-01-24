@@ -1,10 +1,14 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const Background = () => {
+    const { theme } = useTheme();
+    const gridColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.03)';
+
     return (
-        <div className="fixed inset-0 z-0 overflow-hidden bg-[#0a0a0b] pointer-events-none">
+        <div className="fixed inset-0 z-0 overflow-hidden bg-gray-50 dark:bg-[#0a0a0b] pointer-events-none transition-colors duration-300">
             {/* Soft Ambient Glows */}
             <motion.div
                 animate={{
@@ -32,8 +36,8 @@ const Background = () => {
             {/* Faint Grid - Barely Visible */}
             <div className="absolute inset-0 opacity-[0.1]"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(${gridColor} 1px, transparent 1px),
+                                      linear-gradient(90deg, ${gridColor} 1px, transparent 1px)`,
                     backgroundSize: '120px 120px',
                     maskImage: 'radial-gradient(circle at center, black 30%, transparent 100%)'
                 }}

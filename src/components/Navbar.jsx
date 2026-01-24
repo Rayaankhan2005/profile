@@ -1,9 +1,11 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
+    const { theme, toggleTheme } = useTheme();
     return (
         <motion.div 
             initial={{ y: -100, opacity: 0 }}
@@ -13,15 +15,15 @@ const Navbar = () => {
         >
             <nav className="apple-nav rounded-full px-10 py-3.5 flex items-center justify-between w-full max-w-5xl shadow-xl">
                 <div className="text-lg font-bold tracking-tight cursor-pointer flex items-center group">
-                    <span className="text-white/90 hover:text-[#007aff] transition-colors duration-300 uppercase tracking-[0.2em] text-xs font-black">portfolio</span>
+                    <span className="text-gray-900 dark:text-white/90 hover:text-[#007aff] transition-colors duration-300 uppercase tracking-[0.2em] text-xs font-black">portfolio</span>
                 </div>
                 
-                <ul className="hidden md:flex space-x-12 text-[13px] font-semibold text-white/50">
-                    {['Home', 'Experience', 'Education', 'Skills'].map((item) => (
+                <ul className="hidden md:flex space-x-12 text-[13px] font-semibold text-gray-500 dark:text-white/50">
+                    {['Home', 'Experience', 'Projects', 'Education', 'Skills'].map((item) => (
                         <li key={item}>
                             <a 
                                 href={`#${item.toLowerCase()}`} 
-                                className="relative hover:text-white transition-colors duration-300 py-1 group inline-block"
+                                className="relative hover:text-gray-900 dark:hover:text-white transition-colors duration-300 py-1 group inline-block"
                             >
                                 {item}
                                 <span className="absolute bottom-[-6px] left-0 w-0 h-[1.5px] bg-[#007aff] transition-all duration-300 group-hover:w-full"></span>
@@ -31,17 +33,23 @@ const Navbar = () => {
                 </ul>
 
                 <div className="flex items-center space-x-6">
+                    <button
+                        onClick={toggleTheme}
+                        className="text-black/60 dark:text-white/40 hover:text-[#007aff] dark:hover:text-[#007aff] transition-colors duration-300 focus:outline-none"
+                    >
+                        {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
+                    </button>
                    <motion.a 
                         whileHover={{ scale: 1.1 }} 
                         href="https://github.com/Rayaankhan2005" target="_blank"
-                        className="text-white/40 hover:text-[#007aff] transition-colors duration-300"
+                        className="text-black/60 dark:text-white/40 hover:text-[#007aff] dark:hover:text-[#007aff] transition-colors duration-300"
                     >
                         <FaGithub size={20} />
                     </motion.a>
                    <motion.a 
                         whileHover={{ scale: 1.1 }} 
                         href="https://www.linkedin.com/in/rayaan-khan-181865204" target="_blank"
-                        className="text-white/40 hover:text-[#007aff] transition-colors duration-300"
+                        className="text-black/60 dark:text-white/40 hover:text-[#007aff] dark:hover:text-[#007aff] transition-colors duration-300"
                     >
                         <FaLinkedin size={20} />
                     </motion.a>

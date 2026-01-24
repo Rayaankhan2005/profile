@@ -53,10 +53,10 @@ const Education = () => {
                     transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
                     className="text-center mb-24"
                 >
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[11px] font-bold uppercase tracking-widest text-[#86868b] mb-8">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-[#86868b] mb-8">
                         Academic background
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight text-apple-headline mb-6">
+                    <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight text-apple-headline mb-6">
                         Educational <span className="text-gradient-blue-cyan">History</span>
                     </h2>
                 </motion.div>
@@ -69,30 +69,30 @@ const Education = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: index * 0.05, ease: [0.23, 1, 0.32, 1] }}
                             viewport={{ once: true }}
-                            className="apple-glass-interactive p-8 group border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors"
+                            className="apple-glass-interactive p-8 group border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01] hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors"
                         >
                             <div className="flex justify-between items-start mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-[#1c1c1e] border border-white/5 flex items-center justify-center text-xl text-white/30 group-hover:text-[#007aff] transition-colors duration-500">
+                                <div className="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-[#1c1c1e] border border-black/5 dark:border-white/5 flex items-center justify-center text-xl text-gray-400 dark:text-white/30 group-hover:text-[#007aff] transition-colors duration-500">
                                     {edu.icon}
                                 </div>
                                 <div className="text-right">
-                                    <div className="px-3 py-1 rounded-full bg-white/5 text-[11px] font-bold text-[#007aff] uppercase tracking-wider mb-2">
+                                    <div className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 text-[11px] font-bold text-[#007aff] uppercase tracking-wider mb-2">
                                         {edu.year}
                                     </div>
-                                    <div className="text-[10px] text-[#86868b] font-bold uppercase tracking-widest">
+                                    <div className="text-[10px] text-gray-400 dark:text-[#86868b] font-bold uppercase tracking-widest">
                                         {edu.status}
                                     </div>
                                 </div>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-white tracking-tight mb-2">
+                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight mb-2">
                                 {edu.institution}
                             </h3>
-                            <h4 className="text-base text-[#86868b] font-medium mb-6">
+                            <h4 className="text-base text-gray-500 dark:text-[#86868b] font-medium mb-6">
                                 {edu.degree}
                             </h4>
                             
-                            <p className="text-[#86868b] text-sm leading-relaxed border-t border-white/5 pt-6">
+                            <p className="text-gray-500 dark:text-[#86868b] text-sm leading-relaxed border-t border-black/5 dark:border-white/5 pt-6">
                                 {edu.description}
                             </p>
                         </motion.div>
