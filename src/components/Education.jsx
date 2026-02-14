@@ -6,39 +6,30 @@ import { FaGraduationCap, FaCertificate } from 'react-icons/fa';
 const educationData = [
     {
         id: 1,
-        institution: "Acharya Institutes",
+        institution: "Acharya Institutes Of Graduate Studies",
         degree: "Bachelor of Computer Applications",
-        year: "2023 – 2026",
+        year: "Expected 07/2026",
         status: "Pursuing",
-        description: "Focusing on advanced software engineering principles, system architecture, and computational theory.",
+        description: "Computer Applications Development - Bengaluru, India",
         icon: <FaGraduationCap />
     },
     {
         id: 2,
+        institution: "Bangalore City University",
+        degree: "Bachelor of Computer Applications",
+        year: "04/2020",
+        status: "Completed",
+        description: "Computer Applications Development - Bengaluru, India",
+        icon: <FaGraduationCap />
+    },
+    {
+        id: 3,
         institution: "Besant Technology",
         degree: "Python Training Program",
         year: "Certified",
         status: "Completed",
-        description: "Intensive specialization in Python development, covering complex backend logic and data structures.",
+        description: "Intensive specialization in Python development.",
         icon: <FaCertificate />
-    },
-    {
-        id: 3,
-        institution: "NICT Computer Education",
-        degree: "Computer Education Certificate",
-        year: "Certified",
-        status: "Completed",
-        description: "Foundational mastery in computer science fundamentals and information systems management.",
-        icon: <FaCertificate />
-    },
-    {
-        id: 4,
-        institution: "MES College",
-        degree: "Pre-University Education",
-        year: "Graduated",
-        status: "Completed",
-        description: "Core academic foundation with a secondary focus on Science and Mathematics.",
-        icon: <FaGraduationCap />
     }
 ];
 
@@ -57,7 +48,7 @@ const Education = () => {
                         Academic background
                     </div>
                     <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight text-apple-headline mb-6">
-                        Educational <span className="text-gradient-blue-cyan">History</span>
+                        Educational <span className="text-indigo-600 dark:text-indigo-400">History</span>
                     </h2>
                 </motion.div>
 
@@ -72,11 +63,11 @@ const Education = () => {
                             className="apple-glass-interactive p-8 group border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01] hover:bg-black/[0.03] dark:hover:bg-white/[0.03] transition-colors"
                         >
                             <div className="flex justify-between items-start mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-[#1c1c1e] border border-black/5 dark:border-white/5 flex items-center justify-center text-xl text-gray-400 dark:text-white/30 group-hover:text-[#007aff] transition-colors duration-500">
+                                <div className="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-[#1c1c1e] border border-black/5 dark:border-white/5 flex items-center justify-center text-xl text-gray-400 dark:text-white/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-500">
                                     {edu.icon}
                                 </div>
                                 <div className="text-right">
-                                    <div className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 text-[11px] font-bold text-[#007aff] uppercase tracking-wider mb-2">
+                                    <div className="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-[11px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-2">
                                         {edu.year}
                                     </div>
                                     <div className="text-[10px] text-gray-400 dark:text-[#86868b] font-bold uppercase tracking-widest">

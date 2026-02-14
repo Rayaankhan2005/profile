@@ -53,7 +53,7 @@ const Certificates = () => {
                             Verified Credentials
                         </div>
                         <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight text-apple-headline mb-6">
-                            Professional <span className="text-gradient-blue-cyan">Certifications</span>
+                            Professional <span className="text-indigo-600 dark:text-indigo-400">Certifications</span>
                         </h2>
                     </div>
 
@@ -73,13 +73,13 @@ const Certificates = () => {
                                         alt={cert.title} 
                                         className="w-full h-full object-contain bg-gray-100 dark:bg-[#1c1c1e]/50 transform scale-100 group-hover:scale-105 transition-transform duration-700 opacity-100 dark:opacity-80 group-hover:opacity-100 p-4"
                                     />
-                                    <div className="absolute top-6 right-6 z-20 bg-gray-100 dark:bg-[#1c1c1e] p-2.5 rounded-2xl border border-black/5 dark:border-white/10 text-[#007aff] shadow-xl">
+                                    <div className="absolute top-6 right-6 z-20 bg-gray-100 dark:bg-[#1c1c1e] p-2.5 rounded-2xl border border-black/5 dark:border-white/10 text-indigo-600 dark:text-indigo-400 shadow-xl">
                                         <FaAward size={18} />
                                     </div>
                                 </div>
                                 
                                 <div className="p-8 space-y-4">
-                                    <div className="px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 text-[10px] font-bold text-[#007aff] uppercase tracking-wider inline-block">
+                                    <div className="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider inline-block">
                                         {cert.date}
                                     </div>
                                     <div>
@@ -90,7 +90,7 @@ const Certificates = () => {
                                     <div className="pt-6 border-t border-black/5 dark:border-white/5">
                                         <a 
                                             href={cert.link} 
-                                            className="inline-flex items-center text-sm font-bold text-gray-600 dark:text-white/60 hover:text-[#007aff] transition-colors duration-300"
+                                            className="inline-flex items-center text-sm font-bold text-gray-600 dark:text-white/60 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
                                         >
                                             Verify Credential <FaExternalLinkAlt className="ml-2 text-xs opacity-50" />
                                         </a>

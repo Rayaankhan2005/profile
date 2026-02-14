@@ -1,6 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { HiMail, HiPaperAirplane } from 'react-icons/hi';
 
 const Contact = () => {
     return (
@@ -11,45 +12,51 @@ const Contact = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
                     viewport={{ once: true }}
-                    className="apple-glass-interactive p-10 md:p-20 border border-white/5"
+                    className="tech-glass-card p-10 md:p-20"
                 >
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-[#86868b] mb-8">
-                            Connection
+                        <div className="tech-badge mb-8">
+                            <HiMail className="w-3.5 h-3.5 mr-2" />
+                            <span>Get Connected</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight text-apple-headline mb-8">
-                            Get in <span className="text-gradient-blue-cyan">Touch</span>
+                        <h2 className="text-5xl md:text-7xl tech-heading text-zinc-900 dark:text-white mb-8">
+                            Let's <span className="text-indigo-600 dark:text-indigo-400">Connect</span>
                         </h2>
-                        <p className="text-gray-500 dark:text-[#86868b] text-lg max-w-xl mx-auto font-medium">
+                        <p className="tech-subheading text-lg max-w-xl mx-auto mb-6">
                             Actively seeking opportunities to contribute to engineering excellence as a Python Developer or Technical Support Specialist.
                         </p>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-zinc-600 dark:text-zinc-400">
+                            <a href="mailto:rayaan99000@gmail.com" className="hover:text-indigo-600 transition-colors">rayaan99000@gmail.com</a>
+                            <span className="hidden md:block">•</span>
+                            <span className="hover:text-indigo-600 transition-colors">+91 900067972</span>
+                        </div>
                     </div>
 
                     <form className="space-y-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="space-y-3">
-                                <label className="text-[10px] font-bold text-gray-500 dark:text-[#86868b] uppercase tracking-widest ml-1">Full Name</label>
+                                <label className="text-[10px] font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-widest ml-1">Full Name</label>
                                 <input 
                                     type="text" 
-                                    className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 text-gray-900 dark:text-white px-6 py-4 rounded-2xl focus:outline-none focus:border-[#007aff] focus:ring-4 focus:ring-blue-500/10 transition-all placeholder:text-black/30 dark:placeholder:text-white/20" 
+                                    className="w-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white px-6 py-4 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-500" 
                                     placeholder="Jane Doe" 
                                 />
                             </div>
                             <div className="space-y-3">
-                                <label className="text-[10px] font-bold text-gray-500 dark:text-[#86868b] uppercase tracking-widest ml-1">Email Address</label>
+                                <label className="text-[10px] font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-widest ml-1">Email Address</label>
                                 <input 
                                     type="email" 
-                                    className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 text-gray-900 dark:text-white px-6 py-4 rounded-2xl focus:outline-none focus:border-[#007aff] focus:ring-4 focus:ring-blue-500/10 transition-all placeholder:text-black/30 dark:placeholder:text-white/20" 
+                                    className="w-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white px-6 py-4 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-500" 
                                     placeholder="jane@example.com" 
                                 />
                             </div>
                         </div>
 
                         <div className="space-y-3">
-                            <label className="text-[10px] font-bold text-gray-500 dark:text-[#86868b] uppercase tracking-widest ml-1">Message Body</label>
+                            <label className="text-[10px] font-bold text-zinc-600 dark:text-zinc-400 uppercase tracking-widest ml-1">Message Body</label>
                             <textarea 
                                 rows="5" 
-                                className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10 text-gray-900 dark:text-white px-6 py-4 rounded-2xl focus:outline-none focus:border-[#007aff] focus:ring-4 focus:ring-blue-500/10 transition-all placeholder:text-black/30 dark:placeholder:text-white/20" 
+                                className="w-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white px-6 py-4 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-500" 
                                 placeholder="Describe your inquiry..."
                             ></textarea>
                         </div>
@@ -57,9 +64,10 @@ const Contact = () => {
                         <motion.button 
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.99 }}
-                            className="w-full py-5 apple-button-primary rounded-2xl font-bold text-lg shadow-xl shadow-blue-500/20 text-white"
+                            className="w-full py-5 tech-button-primary rounded-xl font-bold text-lg flex items-center justify-center gap-3"
                         >
-                            Send Correspondence
+                            <HiPaperAirplane className="text-xl" />
+                            Send Message
                         </motion.button>
                     </form>
                 </motion.div>

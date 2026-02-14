@@ -1,6 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { HiUser } from 'react-icons/hi';
 
 const About = () => {
     return (
@@ -11,22 +12,23 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
                     viewport={{ once: true }}
-                    className="max-w-4xl mx-auto apple-glass-interactive p-8 md:p-16 relative overflow-hidden"
+                    className="max-w-4xl mx-auto tech-glass-card p-8 md:p-16 relative overflow-hidden"
                 >
                     <div className="text-center mb-12">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-[#86868b] mb-8">
-                            Professional Identity
+                        <div className="tech-badge mb-8">
+                            <HiUser className="w-3.5 h-3.5 mr-2" />
+                            <span>Professional Identity</span>
                         </div>
-                        <h3 className="text-3xl md:text-6xl font-bold text-gray-900 dark:text-white mb-10 leading-tight tracking-tight text-apple-headline">
-                             Driven by <span className="text-gradient-blue-cyan">Curiosity</span> & <br/>
-                             <span className="text-gray-300 dark:text-white/40">Precision.</span>
+                        <h3 className="text-4xl md:text-6xl tech-heading text-zinc-900 dark:text-white mb-10">
+                             Driven by <span className="text-indigo-600 dark:text-indigo-400">Curiosity</span> & <br/>
+                             <span className="text-zinc-400 dark:text-zinc-500">Precision.</span>
                         </h3>
-                         <div className="text-gray-500 dark:text-[#86868b] text-xl space-y-8 leading-relaxed font-medium max-w-2xl mx-auto">
+                         <div className="tech-body text-xl space-y-8 max-w-3xl mx-auto">
                             <p>
-                                I am an entry-level IT professional with experience in Python development, technical project coordination, and quality assurance. I have worked on real-world client projects and contributed to product planning, testing, and system workflows.
+                                Computer Applications undergraduate with hands-on experience in <strong>software development</strong>, <strong>IT operations</strong>, and <strong>technical support</strong>. Skilled in building and supporting web applications using <strong>Python (Flask)</strong>, frontend technologies, and databases.
                             </p>
                             <p>
-                                Currently pursuing a Bachelor of Computer Applications, I am focused on learning, improving, and growing within a technology-driven environment.
+                                Experienced in <strong>manual QA testing</strong>, <strong>Google Workspace administration</strong>, and collaborating with remote teams on real-world projects across healthcare and aviation domains. Adaptable, quick learner, and eager to contribute across technical functions.
                             </p>
                        </div>
                     </div>
@@ -43,10 +45,10 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1, duration: 0.8, ease: "easeOut" }}
                                 viewport={{ once: true }}
-                                className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-8 text-center"
+                                className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 text-center shadow-sm hover:border-indigo-500/30 transition-all duration-300"
                             >
-                                <h4 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</h4>
-                                <p className="text-[10px] text-gray-400 dark:text-[#86868b] font-bold uppercase tracking-widest">{stat.label}</p>
+                                <h4 className="text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-2">{stat.value}</h4>
+                                <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">{stat.label}</p>
                             </motion.div>
                         ))}
                     </div>

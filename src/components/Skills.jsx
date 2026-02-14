@@ -1,9 +1,10 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaPython, FaApple, FaWindows, FaDatabase } from 'react-icons/fa';
+import { FaPython, FaApple, FaWindows, FaDatabase, FaDownload } from 'react-icons/fa';
 import { SiGoogle } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
+import { HiCode } from 'react-icons/hi';
 
 const skillsData = [
     { name: "Google Workspace Admin", level: 95, icon: <SiGoogle /> },
@@ -16,28 +17,29 @@ const skillsData = [
 
 const SkillItem = ({ skill, index }) => (
     <motion.div 
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: index * 0.05, ease: [0.23, 1, 0.32, 1] }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1, ease: [0.23, 1, 0.32, 1] }}
         viewport={{ once: true }}
-        className="apple-glass-interactive p-8 space-y-6 bg-white/50 dark:bg-[#161617]/70"
+        className="tech-glass-card p-8 space-y-5 group"
     >
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <div className="text-2xl text-gray-400 dark:text-white/30 transition-colors duration-500 group-hover:text-[#007aff]">
+                <div className="text-3xl text-zinc-400 dark:text-zinc-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-all duration-500 group-hover:scale-110">
                     {skill.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">{skill.name}</h3>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">{skill.name}</h3>
             </div>
-            <div className="text-sm font-bold text-gray-500 dark:text-[#86868b]">{skill.level}%</div>
+            <div className="text-sm font-bold text-zinc-500 dark:text-zinc-400">{skill.level}%</div>
         </div>
         
-        <div className="h-1 bg-black/5 dark:bg-white/5 rounded-full overflow-hidden">
+        <div className="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
             <motion.div 
                 initial={{ width: 0 }}
                 whileInView={{ width: `${skill.level}%` }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5, delay: 0.3, ease: "circOut" }}
-                className="h-full bg-[#007aff] shadow-[0_0_12px_rgba(0,122,255,0.3)]"
+                className="h-full bg-indigo-500 shadow-sm"
             ></motion.div>
         </div>
     </motion.div>
@@ -46,38 +48,40 @@ const SkillItem = ({ skill, index }) => (
 const Skills = () => {
     return (
         <section id="skills" className="py-32 relative overflow-hidden">
-            <div className="container mx-auto px-6 max-w-5xl relative z-10">
+            <div className="container mx-auto px-6 max-w-6xl relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-                    className="text-center mb-24"
+                    className="text-center mb-20"
                 >
-                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-[#86868b] mb-8">
-                        Technical Stack
+                     <div className="tech-badge mb-8">
+                        <HiCode className="w-3.5 h-3.5 mr-2" />
+                        <span>Technical Stack</span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight text-apple-headline mb-6">
-                        Expertise & <span className="text-gradient-blue-cyan">Capabilities</span>
+                    <h2 className="text-5xl md:text-7xl tech-heading text-zinc-900 dark:text-white mb-6">
+                        Expertise & <span className="text-indigo-600 dark:text-indigo-400">Capabilities</span>
                     </h2>
-                    <p className="text-gray-500 dark:text-[#86868b] text-lg max-w-2xl mx-auto font-medium">
-                        A precise technical foundation built across diverse ecosystems and engineering disciplines.
+                    <p className="tech-subheading text-lg max-w-2xl mx-auto">
+                        A precise technical foundation built across diverse ecosystems and engineering disciplines
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skillsData.map((skill, index) => (
                         <SkillItem key={skill.name} skill={skill} index={index} />
                     ))}
                 </div>
 
-                <div className="mt-24 flex justify-center">
+                <div className="mt-20 flex justify-center">
                     <motion.a 
                         href="/resume.pdf"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="apple-button-secondary px-10 py-4 rounded-full font-bold text-gray-900 dark:text-white/90 flex items-center justify-center backdrop-blur-xl border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5"
+                        className="tech-button-secondary flex items-center gap-3"
                     >
+                        <FaDownload className="text-lg" />
                         Download Full Credentials
                     </motion.a>
                 </div>

@@ -15,7 +15,7 @@ const Background = () => {
                     opacity: [0.1, 0.15, 0.1],
                 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[-10%] left-[10%] w-[100vw] h-[100vw] rounded-full bg-gradient-to-br from-[#007aff]/10 to-transparent blur-[160px]"
+                className="absolute top-[-10%] left-[10%] w-[100vw] h-[100vw] rounded-full bg-gradient-to-br from-indigo-500/10 to-transparent blur-[160px]"
             />
             
             <motion.div
@@ -23,7 +23,7 @@ const Background = () => {
                     opacity: [0.05, 0.1, 0.05],
                 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-[-10%] right-[10%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tl from-[#5ac8fa]/05 to-transparent blur-[160px]"
+                className="absolute bottom-[-10%] right-[10%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tl from-zinc-500/05 to-transparent blur-[160px]"
             />
 
             {/* Cinematic Noise Overlay - Extremely Subtle */}

@@ -1,152 +1,154 @@
 @import "tailwindcss";
 
 @theme {
+  /* Modern Professional Fonts */
   --font-heading: "Inter", system-ui, -apple-system, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  --bg-charcoal: #0a0a0b;
-  --apple-blue: #007aff;
-  --apple-gray: #8e8e93;
-  --apple-silver: #f5f5f7;
+  /* Professional Color Palette (Minimalist) */
+  --bg-dark: #09090b;       /* Zinc 950 */
+  --bg-darker: #020202;     /* Almost Black */
+  --bg-card: #18181b;       /* Zinc 900 */
+  --bg-light: #ffffff;
 
-  --text-primary: #ffffff;
-  --text-secondary: #86868b;
+  /* Single Primary Accent (Indigo/Violet) */
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-glow: rgba(99, 102, 241, 0.15);
+  
+  /* Neutral Tones */
+  --text-primary: #f4f4f5;   /* Zinc 100 */
+  --text-secondary: #a1a1aa; /* Zinc 400 */
+  --text-muted: #52525b;     /* Zinc 600 */
+  --border-color: #27272a;   /* Zinc 800 */
 
-  --glass-bg: rgba(22, 22, 23, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --radius-apple: 16px;
-
-  --color-apple-blue: #007aff; 
+  /* Refined Gradients */
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); /* Subtle Indigo */
+  --gradient-subtle: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  
+  /* Shadows */
+  --shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 40px -10px rgba(99, 102, 241, 0.15);
 }
 
 @variant dark (&:where(.dark, .dark *));
 
 html {
   scroll-behavior: smooth;
-  cursor: default;
 }
 
 body {
-  @apply bg-[#f5f5f7] text-[#1d1d1f] dark:bg-[#0a0a0b] dark:text-white transition-colors duration-300;
+  @apply bg-white text-zinc-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-300;
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Custom Cursor (Optional - keep subtle) */
+@media (min-width: 1024px) {
+  * { cursor: none !important; }
 }
-::-webkit-scrollbar-track {
-  background: var(--bg-charcoal);
-}
+
+/* Modern Scrollbar (Minimalist) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 10px;
-  border: 2px solid var(--bg-charcoal);
+  @apply bg-zinc-300 dark:bg-zinc-800 rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  @apply bg-zinc-400 dark:bg-zinc-700;
 }
 
-/* Apple-Style Glass */
-.apple-glass {
-  @apply bg-white/70 dark:bg-[#161617]/70 border-black/5 dark:border-white/10 backdrop-blur-xl;
-  -webkit-backdrop-filter: blur(20px);
+/* --- Component Styles --- */
+
+/* Glass Cards (Clean) */
+.tech-glass-card {
+  @apply bg-white dark:bg-[#18181b] border border-zinc-200 dark:border-zinc-800 rounded-2xl transition-all duration-300;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.apple-glass-interactive {
-  @apply bg-white/70 dark:bg-[#161617]/70 border-black/5 dark:border-white/10 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)];
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--radius-apple);
+.tech-glass-card:hover {
+  @apply border-indigo-500/30 dark:border-indigo-500/30;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.apple-glass-interactive:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(0, 122, 255, 0.3);
-  transform: translateY(-6px) scale(1.01);
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(0, 122, 255, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+/* Nav (Minimal) */
+.tech-nav {
+  @apply bg-white/80 dark:bg-[#09090b]/80 border-b border-zinc-200 dark:border-zinc-800 backdrop-blur-xl;
+  height: 80px; /* Fixed height for consistency */
 }
 
-.apple-nav {
-  @apply bg-white/70 dark:bg-[#161617]/40 border-black/5 dark:border-white/10 shadow-lg dark:shadow-md backdrop-blur-xl;
-  backdrop-filter: saturate(180%) blur(24px);
-  -webkit-backdrop-filter: saturate(180%) blur(24px);
+/* Buttons (Professional) */
+.tech-button-primary {
+  @apply bg-[#6366f1] hover:bg-[#4f46e5] text-white font-medium rounded-lg px-6 py-3 transition-all duration-300 shadow-lg shadow-indigo-500/20;
 }
 
-/* Typography & Text */
-.text-apple-headline {
-  font-weight: 700;
-  letter-spacing: -0.022em;
+.tech-button-primary:hover {
+  @apply shadow-indigo-500/40;
+  transform: translateY(-1px);
 }
 
-.text-apple-subheadline {
-  color: var(--text-secondary);
-  font-weight: 400;
-  line-height: 1.5;
+.tech-button-secondary {
+  @apply bg-transparent border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium rounded-lg px-6 py-3 transition-all duration-300;
 }
 
-.text-gradient-apple {
-  background: linear-gradient(180deg, #fff 0%, #007aff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.tech-button-secondary:hover {
+  @apply border-zinc-400 dark:border-zinc-600 bg-zinc-50 dark:bg-zinc-800;
 }
 
-.text-gradient-blue-cyan {
-  background: linear-gradient(90deg, #007aff, #5ac8fa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Typography */
+.tech-heading {
+  @apply font-bold tracking-tight text-zinc-900 dark:text-white;
+  letter-spacing: -0.02em;
 }
 
-/* Interactive Elements */
-.apple-button-primary {
-  background-color: var(--apple-blue);
-  color: white;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.tech-subheading {
+  @apply text-zinc-500 dark:text-zinc-400 font-medium;
 }
 
-.apple-button-primary:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+.tech-body {
+  @apply text-zinc-600 dark:text-zinc-400 leading-relaxed;
 }
 
-.apple-button-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Badges & Tags */
+.tech-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide;
+  @apply bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-500/20;
 }
 
-.apple-button-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.4);
+.tech-tag {
+  @apply px-3 py-1.5 rounded-md text-sm font-medium;
+  @apply bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700 transition-colors;
 }
 
-/* Animations */
-.reveal-on-scroll {
+.tech-tag:hover {
+  @apply border-indigo-500/30 text-indigo-600 dark:text-indigo-400;
+}
+
+/* Gradients (Text) */
+.gradient-tech-primary {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-violet-500;
+}
+
+/* Section Divider */
+.section-divider {
+  @apply h-px w-full bg-zinc-200 dark:bg-zinc-800;
+}
+
+/* Utility Animations */
+.reveal-fade-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
-.reveal-on-scroll.active {
+.reveal-fade-up.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-@keyframes soft-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.animate-soft-pulse {
-  animation: soft-pulse 3s ease-in-out infinite;
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .tech-heading { font-size: 2.25rem; }
 }
